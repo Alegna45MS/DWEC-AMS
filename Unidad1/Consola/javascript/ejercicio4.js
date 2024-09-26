@@ -12,6 +12,6 @@ for(let i=0;i<5;i=i+1){
         sueldo *= 2; // Doblamos el sueldo
         console.log(`Sueldo doblado: ${sueldo}`);
       } else {
-        console.log(`Sueldo sin cambios: ${sueldo}`);
+        console.log(`Sueldo sin cambioss: ${sueldo}`);
       }
     }
