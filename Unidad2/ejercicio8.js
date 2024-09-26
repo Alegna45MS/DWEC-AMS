@@ -6,5 +6,4 @@ function esBisisesto(anyo){
     }
     return esBisiest
 }
-
-
+ console.log(esBisisesto(2000))
