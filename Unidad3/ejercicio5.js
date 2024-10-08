@@ -7,7 +7,13 @@ for(let i=0;i<10;i++){
 console.log("Nombres de socios:")
 socios.forEach(function(e){console.log(e)})
 console.log("Hay un total de ",socios.length,"socios")
+
 console.log("Socios en orden alfabetico")
 let sociosAlfabetico=[]
-sociosAlfabetico=socios.sort
+sociosAlfabetico=socios.sort()
 sociosAlfabetico.forEach(function(e){console.log(e)})
+
+console.log("Socios en orden alfabetico inverso")
+let sociosInverso=[]
+sociosInverso=socios.reverse()
+sociosInverso.forEach(function(e){console.log(e)})
