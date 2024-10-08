@@ -6,6 +6,7 @@ for(let i=0;i<10;i++){
 }
 console.log("Nombres de socios:")
 socios.forEach(function(e){console.log(e)})
+
 console.log("Hay un total de ",socios.length,"socios")
 
 console.log("Socios en orden alfabetico")
