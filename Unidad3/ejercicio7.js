@@ -15,6 +15,7 @@ for(let i=0;i<3;i++){
     mediaEdad=suma/3
 }
 for(let j=0;j<personas.length;j++){
+    
 }
 
 
