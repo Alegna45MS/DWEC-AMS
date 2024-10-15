@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Cuadrados aleatorios</title>
+    <style>
+        div{
+            position:fixed;
+            width:50px;
+            height:50px;
+        }
+    </style>
+</head>
+<body>
+<script>
+    let rojo
+    let verde
+    let azul
+    let arriba
+    let left
+
+    function numAleColor() {
+    let num=Math.floor(Math.random() * 255)+1
+    return num
+   }
+   function numAlePosicion() {
+    let num=Math.floor(Math.random() * 100)
+    return num
+   }
+
+   for(let i=0;i<1000;i++){
+    rojo=numAleColor();
+    verde=numAleColor();
+    azul=numAleColor();
+    arriba=numAlePosicion();
+    left=numAlePosicion();
+    document.write(`<div style="background-color:rgb(${rojo},${verde},${azul}); top:${arriba}%; left:${left}%;"></div>`)
+   }
+</script>    
+</body>
+</html>
