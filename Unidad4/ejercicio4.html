@@ -6,14 +6,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <script src="ejercicio4.js" defer></script>
+        <style>
+            .rojo{
+                color:red
+            }
+            .verde{
+                color: green;
+            }
+        </style>
     </head>
     <body>
         <form action="">
         <label for="deporte">¿Mi deporte favorito</label>
-        <input type="text" name="deporte" id="deporte">
+        <input type="text" name="deporte" id="deporte" value="aaaaa">
         <br>
         <label for="serie">¿Mi serie favorita</label>
-        <input type="text" name="serie" id="serie">
+        <input type="text" name="serie" id="serie" value="bbbbb">
         <br>
         <label for="pelicula">¿Mi pelicula favorita</label>
         <input type="text" name="pelicula" id="pelicula">
@@ -22,5 +30,12 @@
         </form>
         <br>
         <br>
+        <h1>MIS AFICIONES...</h1>
+        <p>¿Mi deporte favorito?</p>
+        <div id="deportes"></div>
+        <p>¿Mi serie favorito?</p>
+        <div></div>
+        <p>¿Mi pelicula favorito?</p>
+        <div id="peliculas"></div>
     </body>
 </html>
