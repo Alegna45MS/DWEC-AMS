@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papelera y Bola de Papel</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        #papelera {
+            width: 100px;
+            height: 100px;
+            background-image: url('papelera-vacia.png'); /* URL de la papelera vacía */
+            background-size: cover;
+            position: relative;
+            margin-left: 50px;
+        }
+        #papelera-llena {
+            display: none;
+            width: 100px;
+            height: 100px;
+            background-image: url('papelera-llena.png'); /* URL de la papelera llena */
+            background-size: cover;
+            position: relative;
+            margin-left: 50px;
+        }
+        #bola {
+            width: 50px;
+            height: 50px;
+            background-image: url('bola-papel.png'); /* URL de la bola de papel */
+            background-size: cover;
+            position: relative;
+            cursor: grab;
+        }
+    </style>
+</head>
+<body>
+    <div id="bola" draggable="true"></div>
+    <div id="papelera"></div>
+    <div id="papelera-llena"></div>
+
+    <script>
+        const bola = document.getElementById('bola');
+        const papelera = document.getElementById('papelera');
+        const papeleraLlena = document.getElementById('papelera-llena');
+
+        // Eventos para la bola
+        bola.addEventListener('dragstart', (event) => {
+            event.dataTransfer.setData('text/plain', ''); // Necesario para arrastrar
+        });
+
+        // Eventos para la papelera
+        papelera.addEventListener('dragover', (event) => {
+            event.preventDefault(); // Permite el drop
+        });
+
+        papelera.addEventListener('drop', (event) => {
+            // Cambiar la imagen de la papelera
+            papelera.style.display = 'none';
+            papeleraLlena.style.display = 'block';
+            bola.style.display = 'none'; // Opcional: Oculta la bola después de soltar
+        });
+    </script>
+</body>
+</html>

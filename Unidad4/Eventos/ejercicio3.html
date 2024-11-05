@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mover Caja con Teclado</title>
+    <style>
+        body {
+            overflow: hidden; /* Evita la barra de desplazamiento */
+        }
+        #caja {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute; /* Permite mover la caja libremente */
+            top: 50px; /* Posición inicial */
+            left: 50px; /* Posición inicial */
+        }
+    </style>
+</head>
+<body>
+    <div id="caja"></div>
+    <script>
+        let caja = document.getElementById('caja');
+        let cuerpo=document.body;
+        let posX = 50; // Posición inicial en X
+        let posY = 50; // Posición inicial en Y
+        const step = 10; // Número de píxeles que se moverá la caja
+        cuerpo.addEventListener("keydown",moverCaja)
+
+
+        function moverCaja(e) {
+            switch (e) {
+                case 'up':
+                    posY -= step; // Mover hacia arriba
+                    break;
+                case 'down':
+                    posY += step; // Mover hacia abajo
+                    break;
+                case 'left':
+                    posX -= step; // Mover hacia la izquierda
+                    break;
+                case 'right':
+                    posX += step; // Mover hacia la derecha
+                    break;
+            }
+
+            // Actualiza la posición de la caja
+            caja.style.top = `${posY}px`;
+            caja.style.left = `${posX}px`;
+        }
+
+        document.addEventListener('keydown', (event) => {
+            switch (event.key) {
+                // Teclas de dirección del teclado central
+                case 'ArrowUp':
+                    moverCaja('up');
+                    break;
+                case 'ArrowDown':
+                    moverCaja('down');
+                    break;
+                case 'ArrowLeft':
+                    moverCaja('left');
+                    break;
+                case 'ArrowRight':
+                    moverCaja('right');
+                    break;
+                // Teclas del teclado numérico
+                case '8': // Arriba
+                    moverCaja('up');
+                    break;
+                case '2': // Abajo
+                    moverCaja('down');
+                    break;
+                case '4': // Izquierda
+                    moverCaja('left');
+                    break;
+                case '6': // Derecha
+                    moverCaja('right');
+                    break;
+                // Otras teclas numéricas
+                case '1': // Abajo Izquierda
+                    moverCaja('down');
+                    moverCaja('left');
+                    break;
+                case '3': // Abajo Derecha
+                    moverCaja('down');
+                    moverCaja('right');
+                    break;
+                case '7': // Arriba Izquierda
+                    moverCaja('up');
+                    moverCaja('left');
+                    break;
+                case '9': // Arriba Derecha
+                    moverCaja('up');
+                    moverCaja('right');
+                    break;
+            }
+        });
+    </script>
+</body>
+</html>
